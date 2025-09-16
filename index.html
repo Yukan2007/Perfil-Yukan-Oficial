@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil de Yukan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a5c);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile {
+      margin-top: 50px;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+    }
+
+    h1 {
+      margin: 15px 0 5px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    .links {
+      margin-top: 20px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: white;
+      background: #ff0066;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 5px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      background: #ff3385;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <!-- FOTO DE PERFIL -->
+    <img src="https://i.imgur.com/S2zClgb.jpeg" alt="Foto de Yukan">
+    
+    <!-- NOMBRE/APODO -->
+    <h1>Yukan</h1>
+    <p>Bienvenido a mi perfil personal 💀​​🖤​<br>Naci por mi vieja y morire por El counter</p>
+
+    <!-- LINKS A REDES -->
+    <div class="links">
+      <a href="https://www.instagram.com/yukan.filip/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@YukanFR" target="_blank">YouTube</a>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 🔹 GALERÍA -->
+<div class="gallery">
+  <h2>Mis Publicaciones 📸</h2>
+  <div class="photos">
+    <img src="https://i.imgur.com/Vn6oHWT.jpeg" onclick="openLightbox(this)">
+    <img src="https://i.imgur.com/emO61aa.jpeg" onclick="openLightbox(this)">
+    <img src="https://i.imgur.com/KuLHXM4.jpeg" onclick="openLightbox(this)">
+    <img src="https://i.imgur.com/AXItiA1.jpeg" onclick="openLightbox(this)">
+  </div>
+</div>
+
+<style>
+  .gallery {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .gallery h2 {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .photos img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+
+  .photos img:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<!-- 🔹 VISOR DE FOTOS -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+<style>
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  }
+</style>
+
+<script>
+  function openLightbox(imgElement) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = imgElement.src;
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
